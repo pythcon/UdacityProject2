@@ -29,7 +29,7 @@ import { isUri } from 'valid-url';
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-  app.get("/filteredimage", async (req: Request, res: Response) => {
+  app.get("/filteredimage", async (req, res) => {
     const { image_url: imageUrl } = req.query;
     if (!imageUrl || !isUri(imageUrl)) {
       return res.status(400).send({ auth: false, message: 'Something went wrong with the url' });
